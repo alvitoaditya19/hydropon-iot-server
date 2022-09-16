@@ -160,7 +160,7 @@ module.exports = {
               { new: true, useFindAndModify: false }
             );
 
-            bcrypt.hashSync(userDataJson.password)
+            // bcrypt.hashSync(userDataJson.password)
 
             res.status(200).json({ data: userDataJson });
           } catch (err) {
@@ -189,7 +189,7 @@ module.exports = {
           { new: true, useFindAndModify: false }
         );
 
-        res.status(200).json({ data: passo});
+        res.status(200).json({ data: userData});
       }
     } catch (err) {
       if (err && err.name === "ValidationError") {

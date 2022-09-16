@@ -17,7 +17,7 @@ router.put(
 
 router.get("/", getUser);
 router.get("/:id", detailUser);
-router.delete("/:id", actionDelete);
+router.delete("/delete/:id", actionDelete);
 
 
 module.exports = router;
