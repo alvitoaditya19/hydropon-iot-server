@@ -10,6 +10,7 @@ var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 
+const allDataRouter = require("./app/allData/router");
 const userRouter = require("./app/user/router");
 const lampRouter = require("./app/lamp/router");
 const temperatureRouter = require("./app/temperature/router");
@@ -47,12 +48,10 @@ app.use(
 app.use('/', indexRouter);
 
 // API
+app.use(`${URL}/alldata`, allDataRouter);
 app.use(`${URL}/users`, userRouter);
 app.use(`${URL}/lamps`, lampRouter);
-app.use(`${URL}/temperature`, temperatureRouter);
-
-
-
+app.use(`${URL}/temperatures`, temperatureRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
