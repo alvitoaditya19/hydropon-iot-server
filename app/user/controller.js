@@ -35,7 +35,7 @@ module.exports = {
               });
             } else {
               res.status(403).json({
-                message: "Anda bukan admin dari sistem dashboard kami",
+                message: "Anda tidak diizinkan untuk mengakses sistem dashboard ini",
               });
             }
           } else {

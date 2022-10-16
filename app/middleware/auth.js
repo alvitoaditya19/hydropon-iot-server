@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const User = require('../user/model');
 
 module.exports = {
-  isLoginAdmin: (req, res, next) => {
+  isLoginIndex: (req, res, next) => {
     if (req.session.user === null || req.session.user === undefined) {
       req.flash(
         "alertMessage",
@@ -18,7 +18,7 @@ module.exports = {
     }
   },
 
-  isLoginUser : async(req, res, next) => {
+  isLoginAdmin : async(req, res, next) => {
     try {
       const token = req.headers.authorization ? req.headers.authorization.replace('Bearer ', '') : null;
 
